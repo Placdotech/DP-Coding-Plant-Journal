@@ -1,0 +1,16 @@
+{% extends 'sites/index.html' %}
+{% load static %}
+{% block content %}
+<div id="home_container">
+    <section id="home_heading_section">
+        <h1>Ihre Pflanzen Ihre Reise</h1>
+        <h2>Jede Planzen hat ihren individuelle Weg vor sich</h2>
+        <h2>Dokumentiern Sie den Weg ihrer Liebsten und vergleichen Sie sich weltweit mit anderen</h2>
+    </section>
+    <section id="home_video_section">
+        <video id="home_video" autoplay loop muted preload="auto" playsinline>
+            <source src="{% static 'Videos/video_1.mp4' %}" type="video/mp4">
+        </video>
+    </section>
+</div>
+{% endblock content %}

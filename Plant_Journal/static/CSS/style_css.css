@@ -1,0 +1,29 @@
+/* ----- Index ----- */
+body{
+    font-size: 16px;
+    background: #F3E5AB;
+}
+/* ----- Home ----- */
+#home_container{
+    display: flex;
+    flex-direction: column;
+}
+#home_heading_section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4rem 2rem 4rem 2rem;
+}
+#home_video_section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    background-color: #198754;
+}
+#home_video{
+    width: 50%;
+    height: auto;
+}
+
+
