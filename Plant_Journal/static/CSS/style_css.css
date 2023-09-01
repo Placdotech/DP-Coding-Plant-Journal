@@ -4,6 +4,13 @@ body{
     background: #F3E5AB;
     font-family: 'Lato', sans-serif !important;
 }
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 500,
+    'GRAD' 0,
+    'opsz' 40
+  }
 /* ----- Home ----- */
 #home_container{
     display: flex;
@@ -58,7 +65,7 @@ body{
     display: flex;
     flex-direction: row;
     width: 100vw;
-    margin: 4rem 0 4rem 0;
+    margin: auto auto 4rem auto;
     background-color: #198754;
 }
 #contact_card{
@@ -69,7 +76,7 @@ body{
     padding: 2rem;
 }
 #contact_card h2{
-    margin: 0 0 1rem 0;
+    margin: auto auto 1rem auto;
 }
 #contact_card p{
     font-size: 1.1rem;
@@ -79,8 +86,15 @@ body{
 }
 #contact_form{
     display: none;
-    flex-direction: column;
     margin: auto;
+    grid-template-columns: auto auto;
+}
+#contact_form_back_icon{
+    font-size: 3rem;
+    margin: 1rem 1rem auto auto;
+}
+#contact_form_back_icon:hover{
+    color: gold;
 }
 #contact_form select,
 #contact_form input{
@@ -95,4 +109,28 @@ body{
     resize: none;
     width: 100%;
     height: auto;
+}
+@keyframes hide_card {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(60vw);
+    }
+}
+@keyframes hide_card_reverse {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-60vw);
+    }
+}
+@keyframes show_card {
+    0%{
+        transform: translateX(-60vw);
+    }
+    100%{
+        transform: translateX(0);
+    }
 }
