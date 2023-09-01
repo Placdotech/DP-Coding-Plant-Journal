@@ -7,3 +7,9 @@ def home(request):
 
 def diary(request):
     return render(request, 'sites/diary.html')
+
+def contact(request):
+    return render(request, 'sites/contact.html')
+
+def ranking(request):
+    return render(request, 'sites/ranking.html')

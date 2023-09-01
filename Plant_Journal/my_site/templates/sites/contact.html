@@ -1,0 +1,86 @@
+{% extends 'sites/index.html' %}
+{% load static %}
+{% block content %}
+<div id="contact_container">
+    <section id="contact_video_section">
+        <video id="contact_video" loop muted preload="auto" playsinline>
+            <source src="{% static 'Videos/video_2.mp4' %}" type="video/mp4">
+        </video>
+    </section>
+    <section id="contact_info_text">
+        <h2>Sie haben ein Problem ?</h2>
+        <p>
+            Unser oberstes Ziel ist es, Ihnen das bestmögliche Benutzererlebnis zu bieten, und wir entschuldigen uns aufrichtig für eventuelle Unannehmlichkeiten, die Ihnen aufgrund dieses Fehlers entstanden sind. Wir sind uns bewusst, wie wichtig reibungslose Abläufe und Zuverlässigkeit für Ihre Zufriedenheit sind.
+            <br>
+            <br>
+            Unsere engagierten Teams arbeiten rund um die Uhr, um die Fehlerursache zu ermitteln und eine dauerhafte Lösung zu implementieren. Wir schätzen Ihr Vertrauen in unsere Dienstleistungen und sind dankbar für Ihr Feedback, das uns hilft, unsere Plattform kontinuierlich zu verbessern.
+            <br>
+            <br>
+            Bitte zögern Sie nicht, uns zu kontaktieren, wenn Sie weitere Fragen oder Probleme haben. Wir stehen Ihnen jederzeit gerne zur Verfügung, um Ihnen zu helfen und sicherzustellen, dass Ihre Erfahrung mit unserer Plattform so reibungslos wie möglich verläuft.
+            <br>
+            <br>
+            Vielen Dank für Ihre Geduld und Ihr Verständnis.
+            <br>
+            <br>
+            Mit freundlichen Grüßen,
+            <br>
+            Your Plants Your Diary Team
+        </p>
+    </section>
+    <section id="contact_card_section">
+        <div id="contact_card">
+            <h2 class="text-light">Kontakt</h2>
+            <p class="text-light">
+                Max Mustermann 
+                <br>
+                Musterweg 1 
+                <br>
+                12345 Musterort 
+                <br>
+            </p>
+            <a href="tel:+123456789" class="text-light text-decoration-none"><button type="button" class="btn btn-warning w-100 my-2">Anrufen</button></a>
+            <a href="mailto:maxmustermann@mustermann.de"><button type="button" class="btn btn-warning w-100 my-2">E-Mail</button></a>
+            <a href="https://wa.me/+123456789"><button type="button" class="btn btn-warning w-100 my-2">WhatsApp</button></a>
+            <a href=""><button type="button" class="btn btn-warning w-100 my-2">Kontaktformular</button></a>
+        </div>
+        <div id="contact_form">
+            <h2 class="text-light my-3">Kontaktformular</h2>
+            <select class="form-select mb-3">
+                <option disabled selected>Grund ihrer Anfrage ?</option>
+                <option value="login">Probleme beim login</option>
+                <option value="register">Probleme beim registrieren</option>
+                <option value="improvement">Verbesserungsvorschläge</option>
+                <option value="problems">Probleme mit der Webseite</option>
+                <option value="others">Sonstiges</option>
+              </select>
+
+              <select class="form-select mb-3">
+                <option disabled selected>Wie sollen wir Sie kontaktieren ?</option>
+                <option value="email">E-Mail</option>
+                <option value="call">Anrufen</option>
+                <option value="whatsApp">WhatsApp</option>
+              </select>
+            
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Vorname" >
+              </div>
+
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Nachname">
+              </div> 
+
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Telefonnummer">
+              </div>
+              
+              <div class="textarea-container" id="textarea_container_contact">
+                <textarea name="contact_form_description" id="contact_form_text_field"
+                    placeholder="Bitte beschreiben Sie ihr Anliegen."></textarea>
+             </div>
+              
+              <a href=""><button type="button" class="btn btn-warning w-100 mb-3">Absenden</button></a>
+
+        </div>
+    </section>
+</div>
+{% endblock content %}

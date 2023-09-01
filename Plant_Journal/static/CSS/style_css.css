@@ -2,6 +2,7 @@
 body{
     font-size: 16px;
     background: #F3E5AB;
+    font-family: 'Lato', sans-serif !important;
 }
 /* ----- Home ----- */
 #home_container{
@@ -25,5 +26,73 @@ body{
     width: 50%;
     height: auto;
 }
-
-
+/* ----- Contact ----- */
+#contact_container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#contact_video_section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto 0rem auto 0rem;
+    width: 60%;
+    height: auto;
+}
+#contact_video{
+    width: 75%;
+    height: auto;
+    border-radius: 2.5rem;
+}
+#contact_info_text{
+    margin: 4rem 0 4rem 0;
+    width: 30%;
+    font-size: 1.2rem;
+}
+#contact_info_text h2{
+    margin: 0 0 1rem 0;
+    text-align: center;
+}
+#contact_card_section{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    margin: 4rem 0 4rem 0;
+    background-color: #198754;
+}
+#contact_card{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    padding: 2rem;
+}
+#contact_card h2{
+    margin: 0 0 1rem 0;
+}
+#contact_card p{
+    font-size: 1.1rem;
+}
+#contact_card button{
+    margin: 0 auto 0 auto;
+}
+#contact_form{
+    display: none;
+    flex-direction: column;
+    margin: auto;
+}
+#contact_form select,
+#contact_form input{
+    background-color: #FFFAFA ;
+}
+#contact_form h2{
+    text-align: center;
+}
+#contact_form_text_field{
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    resize: none;
+    width: 100%;
+    height: auto;
+}
