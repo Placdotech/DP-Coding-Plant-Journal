@@ -1,6 +1,9 @@
 {% extends 'sites/index.html' %}
 {% load static %}
 {% block content %}
+
+{% csrf_token %}
+
 <div id="contact_container">
     <section id="contact_video_section">
         <video id="contact_video" loop muted preload="auto" playsinline>
@@ -27,7 +30,9 @@
             Your Plants Your Diary Team
         </p>
     </section>
+    <span class="badge bg-success mx-auto mb-3" id="contact_badge">Die Anfrage wurde erfolgreich versendet.</span>
     <section id="contact_card_section">
+        <img src="{% static 'GIF/sending.gif' %}" id="sending_gif">
         <div id="contact_card">
             <h2 class="text-light">Kontakt</h2>
             <p class="text-light">
@@ -60,7 +65,7 @@
                     <option disabled selected>Wie sollen wir Sie kontaktieren ?</option>
                     <option value="email">E-Mail</option>
                     <option value="call">Anrufen</option>
-                    <option value="whatsApp">WhatsApp</option>
+                    <option value="WhatsApp">WhatsApp</option>
                   </select>
                 
                 <div class="input-group mb-3">
