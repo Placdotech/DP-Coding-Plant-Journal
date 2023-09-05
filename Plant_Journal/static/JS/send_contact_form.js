@@ -25,6 +25,7 @@ function send_form_to_backend(){
     let start_end_animation_btn = $('#contact_form_back_icon');
     let contact_card = $('#contact_card');
     let bird_gif = $('#sending_gif');
+    let contact_badge = $('#contact_badge');
 
     for(let i = 0; i < inputs.length; i++){     // so that the type of input 'email/phone' will set correctly first for autofill
         if(inputs.eq(i).prop('id') !== 'how_to_contact_input'){
@@ -130,6 +131,49 @@ function send_form_to_backend(){
                 };
                 bird_gif.css({
                     'display' : 'block',
+                    'animation' : 'bird_fly_away 4s ease-in-out forwards' 
+                })
+                bird_gif.one('animationstart', () => {
+                    setTimeout(() => {
+                        start_end_animation_btn.click();
+                    },1800);
+                });
+                contact_card.one('animationend', () => {
+                    clear_inputs(inputs)
+                    for(let i = 0; i < inputs.length; i++){
+                        inputs.eq(i).prop('disabled', false)
+                        send_btn.prop('disabled', false)
+                    }
+                    bird_gif.css({
+                        'display' : 'none',
+                        'animation' : '' 
+                    })
+                    return
+                });
+                contact_card.one('animationend', () => {
+                    contact_badge.addClass('bg-success');
+                    setTimeout(() => {
+                        contact_badge.text('Deine Anfrage wurde erfolgreich versendet.')
+                        contact_badge.css({
+                            'display' : 'block',
+                            'animation' : 'show_hide_badge 8s ease-in-out forwards'
+                        });
+                    },1000)
+                });
+                contact_badge.one('animationend', () => {
+                    contact_badge.css({
+                        'display' : 'none',
+                        'animation' : ''
+                    });
+                });
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                for(let i = 0; i < inputs.length; i++){
+                    inputs.eq(i).prop('disabled', true);
+                    send_btn.prop('disabled', true);
+                };
+                bird_gif.css({
+                    'display' : 'block',
                     'animation' : 'bird_try_to_fly_away 4s ease-in-out forwards' 
                 })
                 bird_gif.one('animationstart', () => {
@@ -149,13 +193,24 @@ function send_form_to_backend(){
                     })
                     return
                 });
+                contact_card.one('animationend', () => {
+                    contact_badge.addClass('bg-danger');
+                    setTimeout(() => {
+                        contact_badge.text('Beim versenden deiner Anfrage ist ein Fehler aufgetreten')
+                        contact_badge.css({
+                            'display' : 'block',
+                            'animation' : 'show_hide_badge 8s ease-in-out forwards'
+                        });
+                    },1000)
+                });
+                contact_badge.one('animationend', () => {
+                    contact_badge.css({
+                        'display' : 'none',
+                        'animation' : ''
+                    });
+                });
             },
-            error: function(jqXHR, textStatus, errorThrown) {
-              // Fehlerbehandlung
-              console.error('AJAX error:', errorThrown);
-            }
-          });
-
+        });
     });
 };
 
