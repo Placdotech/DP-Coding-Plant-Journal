@@ -2,10 +2,8 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from .models import *
 import json
-from django.contrib.auth import login, authenticate
 from django.shortcuts import render
 from django.contrib.auth import views as auth_views
-from .forms import CustomLoginForm 
 
 
 # Create your views here.
@@ -41,8 +39,18 @@ def contact_request(request):
     else:
         return JsonResponse({'message' : 'Ungültige Anfrage'}, status=400)
     
+def login(request):
+    photo_list = []
+    number_of_slides = []
+    for i in range(5):
+        photo_list.append(f'pflanze_{i}.jpg')
+        
+    for i in range(1,6):
+        number_of_slides.append(i)
+    
+    ctx = {
+        'photo_number' : photo_list,
+        'slides' : number_of_slides
+    }
 
-class CustomLoginView(auth_views.LoginView):
-    form_class = CustomLoginForm 
-    template_name = 'registration/login.html' 
-
+    return render(request, 'sites/login.html', ctx)

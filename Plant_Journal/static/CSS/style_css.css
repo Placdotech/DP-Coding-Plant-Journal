@@ -175,3 +175,26 @@ body{
     }
 }
 /* ----- Login ----- */
+#login_container{
+    display: flex;
+    flex-direction: column;
+    margin: 4rem auto 4rem auto;
+    width: 20%;
+}
+#login_sub_container{
+    display: flex;
+    flex-direction: row;
+    margin: 6rem 0 4rem 0;
+    font-size: 1.4rem;
+    width: 100vw;
+    background-color: #198754;
+}
+#login_sub_text{
+    margin: 4rem auto auto auto;
+}
+.carousel-item{
+    float: none !important;
+}
+#login_sub_container img{
+    border-radius: 2.5rem;
+}
