@@ -7,5 +7,4 @@ urlpatterns = [
     path("contact", views.contact, name='contact'),
     path("ranking", views.ranking, name='ranking'),
     path('contact_request/', views.contact_request, name='contact_request'),
-    path('register', views.register, name='register')
 ]

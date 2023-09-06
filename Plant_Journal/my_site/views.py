@@ -2,9 +2,10 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from .models import *
 import json
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login, authenticate
-from django.shortcuts import render, redirect
+from django.shortcuts import render
+from django.contrib.auth import views as auth_views
+from .forms import CustomLoginForm 
 
 
 # Create your views here.
@@ -40,17 +41,8 @@ def contact_request(request):
     else:
         return JsonResponse({'message' : 'Ungültige Anfrage'}, status=400)
     
-def register(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            user = form.save()  # Benutzer erstellen
-            username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=raw_password)
-            login(request, user)  # Anmelden des Benutzers nach der Erstellung
-            return redirect('home')  # Hier können Sie zur Startseite oder einer anderen Seite weiterleiten
-    else:
-        form = UserCreationForm()
-    return render(request, 'sites/register.html', {'form': form})
+
+class CustomLoginView(auth_views.LoginView):
+    form_class = CustomLoginForm 
+    template_name = 'registration/login.html' 
 
