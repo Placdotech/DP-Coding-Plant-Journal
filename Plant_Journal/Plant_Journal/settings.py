@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-ob)*^d3%_n!8#3$xh=*!7zqd0c3^&qkszb8a=x(v@40rm(6*!$"
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -53,7 +54,7 @@ MIDDLEWARE = [
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 
-SESSION_COOKIE_AGE = 3600
+SESSION_COOKIE_AGE = config('SESSION_COOKIE_AGE')
 
 ROOT_URLCONF = "Plant_Journal.urls"
 
@@ -82,11 +83,11 @@ WSGI_APPLICATION = "Plant_Journal.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'DP-Coding-Plant-Journal',
-        'USER': 'DP-Coding',
-        'PASSWORD': '07492912',
-        'HOST': 'localhost',  
-        'PORT': '5432',       
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),  
+        'PORT': config('DB_PORT'),       
     }
 }
 

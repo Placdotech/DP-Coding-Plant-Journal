@@ -19,10 +19,8 @@ function set_current_date(){
 };
 
 function check_form(){
-    let created_at = $('#create_entry_created_at');
     let title = $('#create_entry_title');
     let description = $('#create_entry_description');
-    let author = $('#create_entry_author');
     let submit_btn = $('#create_diary_entry_submit_btn');
     let title_is_ready = false;
     let description_is_ready = false

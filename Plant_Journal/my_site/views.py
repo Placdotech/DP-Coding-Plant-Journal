@@ -1,4 +1,3 @@
-from django.http import HttpResponse
 from django.http import Http404
 from django.contrib.auth.hashers import make_password
 from django.shortcuts import render, redirect
@@ -13,7 +12,7 @@ import json
 # Create your views here.
 
 def start(request):
-    if request.methode == 'GET':
+    if request.method == 'GET':
         return redirect('home')
     else:
         raise Http404("Ungültige Anfrage")
@@ -24,6 +23,8 @@ def home(request):
         ctx = {
             'new_user_reg' : True
         }
+
+        return render(request, 'sites/home.html', ctx)
 
     elif request.method == 'GET' and 'user_key' in request.COOKIES:
 
@@ -119,9 +120,6 @@ def diary(request):
         }
 
         return render(request, 'sites/diary.html', ctx)
-        
-    elif request.method == 'GET':
-        return render(request, 'sites/diary.html')
     else:
         raise Http404("Ungültige Anfrage")
 
@@ -311,7 +309,7 @@ def signup(request):
 
         new_user.save()
 
-        return JsonResponse({'message' : 'success'}, status=201)
+        return JsonResponse({'success' : 'Benutzer erfolgreich erstellt'}, status=201)
 
     elif request.method == 'GET':
         photo_list = []

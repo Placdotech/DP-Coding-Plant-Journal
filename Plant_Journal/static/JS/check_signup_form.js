@@ -17,36 +17,35 @@ function start_form_check(){
     }
 };
 
-function check_username(){
+async function check_username() {
     let username = $('#input_username_signup');
     let username_badge = $('#signup_username_error_badge');
 
-    username.on('change', function(){
-
-        data = {
-            'username' : $(this).val()
+    username.on('change', async function () {
+        let data = {
+            'username': $(this).val()
         };
 
-        $.ajax({
-            type: "POST",
-            url: "/check_available/", 
-            data: JSON.stringify(data), 
-            contentType: "application/json; charset=utf-8", 
-        })
-        .done(function(data) {
-            if(data.is_available){
+        try {
+            let response = await $.ajax({
+                type: "POST",
+                url: "/check_available/",
+                data: JSON.stringify(data),
+                contentType: "application/json; charset=utf-8",
+            });
+
+            if (response.is_available) {
                 username_badge.hide();
-            }
-            else{
+            } else {
                 username_badge.show();
-            };
-        })
-        .fail(function(jqXHR, textStatus, errorThrown) {
+            }
+        } catch (error) {
             username_badge.show();
-            console.error("Fehler:", errorThrown);
-        });
+            console.error("Fehler:", error);
+        }
     });
 }
+
 
 function check_names(){
     let first_name = $('#input_first_name_signup');
@@ -148,30 +147,34 @@ function activate_submit_btn(){
     };
 };
 
-function new_user_reg_ajax(){
+function new_user_reg_ajax() {
     let form = $('#signup_container form');
     let submit_btn = $('#signup_submit_btn');
 
-    submit_btn.on('click', () => {
+    submit_btn.on('click', async function (event) {
+        event.preventDefault(); // Verhindern, dass das Formular standardmäßig gesendet wird
 
-        formData = form.serializeArray();
+        let formData = form.serializeArray();
 
-        $.ajax({
-            type : 'POST',
-            url : '/signup/',
-            data : JSON.stringify(formData),
-            contentType : 'application/json; charset=utf-8',
-        })
-        .done(function(){
-            
-            setTimeout(() => {
-                window.location.href = '/home/?new_user_reg=1';     // 0 -> no new_user / 1 -> new_user_reg
-            },500);
+        try {
+            const response = await $.ajax({
+                type: 'POST',
+                url: '/signup/',
+                data: JSON.stringify(formData),
+                contentType: 'application/json; charset=utf-8',
+            });
 
-        })
-        .fail(function (jqXHR, textStatus, errorThrown) {
-            console.error('Fehler:', errorThrown);
-        });
+            // Überprüfen Sie hier die Antwort, wenn dies erforderlich ist
+            if (response.success) {
+                setTimeout(() => {
+                    window.location.href = '/home/?new_user_reg=1';
+                }, 500);
+            } else {
+                // Zeigen Sie eine Fehlermeldung oder nehmen Sie andere Maßnahmen bei fehlgeschlagenem Registrierungsversuch
+                console.error('Registrierung fehlgeschlagen:', response.message);
+            }
+        } catch (error) {
+            console.error('Fehler:', error);
+        }
     });
 };
-

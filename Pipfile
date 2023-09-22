@@ -9,6 +9,7 @@ psycopg2 = "*"
 mysqlclient = "*"
 djangorestframework-simplejwt = "*"
 pillow = "*"
+python-decouple = "*"
 
 [dev-packages]
 
