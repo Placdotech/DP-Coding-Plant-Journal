@@ -1,0 +1,45 @@
+{% extends 'sites/index.html' %}
+{% load static %}
+{% block content %}
+<div id="signup_container">
+    <h2>Registrieren</h2>
+    <form>
+        {% csrf_token %}
+        <div class="input-group mt-1 mb-2">
+            <input type="text" class="form-control" id="input_username_signup" name="username" placeholder="Benutzername">
+          </div>
+          <span class="badge bg-danger" id="signup_username_error_badge">Der gewählte Benutzername ist nicht verfügbar</span>
+          <div class="input-group mt-1 mb-2">
+            <input type="text" class="form-control" id="input_first_name_signup" name="first_name" placeholder="Vorname">
+          </div>    
+          <span class="badge bg-danger" id="signup_first_name_error_badge">Bitte verwenden Sie nur Buchstaben</span>
+          <div class="input-group mt-1 mb-2">
+            <input type="text" class="form-control" id="input_last_name_signup" name="last_name" placeholder="Nachname">
+          </div>    
+          <span class="badge bg-danger" id="signup_last_name_error_badge">Bitte verwenden Sie nur Buchstaben</span>
+          <div class="input-group my-1 mb-2">
+            <input type="password" class="form-control" id="input_password_signup" name="password" placeholder="Passwort">  
+          </div>
+          <div class="input-group my-1 mb-2">
+            <input type="password" class="form-control" id="input_password_repeat_signup" placeholder="Passwort wiederholen"> 
+          </div>
+          <span class="badge bg-danger" id="signup_password_error_badge">Passwörter stimmen nicht überein</span>
+          <p class="m-0">Bereits ein Konto, hier <a href="{% url 'login' %}">einloggen</a></p>
+          <button type="button" class="btn btn-success mt-2" id="signup_submit_btn">Registrieren</button>
+    </form>
+</div>
+<div id="signup_sub_container">
+    <p id="signup_sub_text" class="text-light">
+        Es wird Zeit, dein persönliches Tagebuch zu erstellen.
+        <br>
+        &nbsp;&nbsp; &nbsp; Schnell registrieren und deinen ersten Eintrag anlegen.
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; Komme noch heute unter die Top Zehn deiner Region.
+    </p>
+      <div id="my_carousel_signup">
+        {% for photo in photo_number %}
+        <div class="my_slide_signup"><img src="{% static 'Bilder/'|add:photo' %}"></div>
+        {% endfor %}  
+      </div>
+</div>
+{% endblock content %}

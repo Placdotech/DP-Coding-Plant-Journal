@@ -1,0 +1,27 @@
+{% extends 'sites/index.html' %}
+{% load static %}
+{% block content %}
+<div id="create_entry_container">
+    <form id="create_entry_form">
+        <p id="create_entry_created_at"></p>
+        <h2>
+            <input type="text" name="title" placeholder="Titel" id="create_entry_title">
+        </h2>
+        <div class="textarea-container" id="create_entry_textarea_container">
+            <textarea name="description" id="create_entry_description" placeholder="Beschreibung"></textarea>
+        </div>
+        <div id="create_entry_media_container">
+            <div class="create_entry_media_input_group">
+                <label for="image_upload">Bilder hochladen:</label>
+                <input type="file" id="create_entry_images" name="image_upload" accept="image/*" multiple>
+            </div>
+            <div class="create_entry_media_input_group">
+                <label for="video_upload">Videos hochladen:</label>
+            <input type="file" id="create_entry_videos" name="video_upload" accept="video/*" multiple>
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary" id="create_diary_entry_submit_btn">Eintrag veröffentlichen</button>
+        <p id="create_entry_author">{{username}}</p>  
+    </form>
+</div>
+{% endblock content %}

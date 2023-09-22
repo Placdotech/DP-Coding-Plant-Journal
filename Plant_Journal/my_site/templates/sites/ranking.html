@@ -2,6 +2,37 @@
 {% load static %}
 {% block content %}
 <div id="ranking_container">
-
+    <table class="table">
+        <thead class="text-center" id="table_head_ranking">
+          <tr>
+            <th scope="col">Platz</th>
+            <th scope="col">Username</th>
+            <th scope="col">Tagebucheinträge</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider text-center">
+          {% for rank in ranklist %}
+          {% if forloop.counter <= 3 %}
+          <tr class="table-success">
+              <td>{{ forloop.counter }}</td>
+              <td>{{ rank.usernames }}</td>
+              <td>{{ rank.amount_of_entries }}</td>
+          </tr>
+          {% elif forloop.counter > 3 and forloop.counter <= 5 %}
+          <tr class="table-warning">
+              <td>{{ forloop.counter }}</td>
+              <td>{{ rank.usernames }}</td>
+              <td>{{ rank.amount_of_entries }}</td>
+          </tr>
+          {% else %}
+          <tr class="table-info">
+              <td>{{ forloop.counter }}</td>
+              <td>{{ rank.usernames }}</td>
+              <td>{{ rank.amount_of_entries }}</td>
+          </tr>
+          {% endif %}
+          {% endfor %}
+      </tbody>
+      </table>
 </div>
 {% endblock content %}

@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-ob)*^d3%_n!8#3$xh=*!7zqd0c3^&qkszb8a=x(v@40rm(6*!$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "my_site.apps.MySiteConfig"
+    "my_site.apps.MySiteConfig",
 ]
 
 MIDDLEWARE = [
@@ -50,6 +50,10 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+
+SESSION_COOKIE_AGE = 3600
 
 ROOT_URLCONF = "Plant_Journal.urls"
 
@@ -131,7 +135,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
-MEDIA_URL = "/Bilder/"
+MEDIA_URL = "/media/"
 
-MEDIA_ROOT = BASE_DIR / "static/Bilder"
-
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

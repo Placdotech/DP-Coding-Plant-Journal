@@ -2,6 +2,24 @@
 {% load static %}
 {% block content %}
 <div id="diary_container">
-
+    <a href="{% url 'create_entry' %}" class="mx-auto"><button type="button" class="btn btn-primary" id="diary_new_entry_btn">Eintrag erstellen</button></a>
+    {% for entry in entries %}
+        <div class="diary_entry">
+        <p class="diary_created_at">{{entry.created_at_list}}</p>
+        <h2 class="diary_title">{{entry.titles}}</h2>
+        <pre class="diary_description">{{entry.descriptions}}</pre>
+        <div class="diary_media_container">
+            {% for images in entry.images %}
+            <img class="diary_photos" src="media/{{images}}" alt="">
+            {% endfor %}
+            {% for videos in entry.videos %}
+            <video class='diary_videos' autoplay loop muted preload="auto" playsinline>
+                <source src="media/{{videos}}" type="video/mp4">
+            </video>
+            {% endfor %}
+        </div>
+        <p class="diary_author">{{entry.authors}}</p>
+    </div>
+    {% endfor %}
 </div>
 {% endblock content %}

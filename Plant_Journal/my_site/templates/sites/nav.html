@@ -2,7 +2,7 @@
 <div>
     <nav class="navbar navbar-expand-lg bg-success">
         <div class="container-fluid">
-          <a class="navbar-brand text-light" href="{% url 'home' %}">Your Plants <br> &nbsp; &nbsp; Your Diary </a>
+          <a class="navbar-brand text-light" href="{% url 'home' %}">Your Plants <br> &nbsp; &nbsp; Your Diary</a>
           <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -11,9 +11,15 @@
               <li class="nav-item">
                 <a class="nav-link text-light" aria-current="page" href="{% url 'home' %}">Home</a>
               </li>
+              {% if request.COOKIES.user_key != none %}
               <li class="nav-item">
                 <a class="nav-link text-light" href="{% url 'diary' %}">Tagebuch</a>
               </li>
+              {% else %}
+              <li class="nav-item">
+                <a class="nav-link text-light" id="no_user_diary">Tagebuch</a>
+              </li>
+              {% endif %}
               <li class="nav-item">
                 <a class="nav-link text-light" href="{% url 'ranking' %}">Rangliste</a>
               </li>
@@ -22,7 +28,14 @@
               </li>
             </ul>
           </div>
+          {% if request.COOKIES.user_key != none %}
+          {% if username %}
+          <p class="text-light" id="nav_username" >Hallo {{username}},</p>
+          {% endif %}
+          <a href="{% url 'logout' %}"><button type="button" class="btn btn-warning text-dark text-end" id="logout_btn">Logout</button></a>
+          {% else %}
           <a href="{% url 'login' %}"><button type="button" class="btn btn-warning text-dark text-end">Login</button></a>
+          {% endif %}
         </div>
       </nav>
 </div>

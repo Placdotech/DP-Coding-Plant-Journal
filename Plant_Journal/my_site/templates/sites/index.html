@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="height: 100%;">
 <head>
     {% load static %}
     <meta charset="UTF-8">
@@ -15,18 +15,36 @@
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>    <!-- JS-Cookie-Handling (MIT-License) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script> <!-- Bootstrap JS -->
 </head>
-<body>
+<body style="min-height: 100%; display: flex; flex-direction: column;">
     {% csrf_token %}
 
     {% include 'sites/nav.html' %}
     
-    {% block content%}
+    <div style="flex-grow: 1;">
+        {% block content%}
+        {% endblock content%}
+    </div>
 
-    {% endblock content%}
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="{% static 'JS/show_hide_contact_form.js' %}"></script>
-    <script src="{% static 'JS/send_contact_form.js' %}"></script>
+    <footer>
+        {% include 'sites/footer.html' %}
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script> <!-- Create Cookies with Jquery (MIT-License) -->
+    <script src="{% static 'JS/create_diary_entry.js' %}"></script>
+    <script src="{% static 'JS/check_signup_form.js' %}"></script>
+    <script src="{% static 'JS/carousel.js' %}"></script>
+    <script src="{% static 'JS/login.js' %}"></script>
+    <script src="{% static 'JS/logout.js' %}"></script>
     <script src="{% static 'JS/diary.js' %}"></script>
+    <script>
+        const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRFToken': csrfToken, 
+            }
+        });
+        
+    </script>
 </body>
 </html>

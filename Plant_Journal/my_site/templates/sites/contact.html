@@ -28,9 +28,7 @@
             Your Plants Your Diary Team
         </p>
     </section>
-    <span class="badge bg-success mx-auto mb-3" id="contact_badge"></span>
     <section id="contact_card_section">
-        <img src="{% static 'GIF/sending.gif' %}" id="sending_gif">
         <div id="contact_card">
             <h2 class="text-light">Kontakt</h2>
             <p class="text-light">
@@ -44,48 +42,6 @@
             <a href="tel:+123456789" class="text-light text-decoration-none" target="_blank"><button type="button" class="btn btn-warning w-100 my-2">Anrufen</button></a>
             <a href="mailto:maxmustermann@mustermann.de" target="_blank"><button type="button" class="btn btn-warning w-100 my-2">E-Mail</button></a>
             <a href="https://wa.me/+123456789" target="_blank"><button type="button" class="btn btn-warning w-100 my-2">WhatsApp</button></a>
-            <button type="button" class="btn btn-warning w-100 my-2" id="contact_form_btn">Kontaktformular</button>
-        </div>
-        <div id="contact_form">
-            <span class="material-symbols-outlined" id="contact_form_back_icon">arrow_back</span>
-            <form>
-                <h2 class="text-light my-3">Kontaktformular</h2>
-                <select class="form-select mb-3" id="reason_input">
-                    <option disabled selected>Grund ihrer Anfrage ?</option>
-                    <option value="login">Probleme beim login</option>
-                    <option value="register">Probleme beim registrieren</option>
-                    <option value="improvement">Verbesserungsvorschläge</option>
-                    <option value="problems">Probleme mit der Webseite</option>
-                    <option value="others">Sonstiges</option>
-                  </select>
-    
-                  <select class="form-select mb-3" id="how_to_contact_input">
-                    <option disabled selected>Wie sollen wir Sie kontaktieren ?</option>
-                    <option value="email">E-Mail</option>
-                    <option value="call">Anrufen</option>
-                    <option value="WhatsApp">WhatsApp</option>
-                  </select>
-                
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Vorname" id="first_name_input">
-                  </div>
-    
-                  <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Nachname" id="last_name_input">
-                  </div> 
-    
-                  <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Email/Telefonnummer" id="email_phone_input">
-                  </div>
-                  
-                  <div class="textarea-container" id="textarea_container_contact">
-                    <textarea name="contact_form_description" id="contact_form_text_field"
-                        placeholder="Bitte beschreiben Sie ihr Anliegen."></textarea>
-                 </div>
-                  
-                  <button type="button" class="btn btn-warning w-100 mb-3" id="send_form_btn">Absenden</button>
-            </form>
-
         </div>
     </section>
 </div>
