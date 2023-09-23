@@ -3,6 +3,31 @@
 
 Introducing our innovative website dedicated to plant enthusiasts worldwide. With our platform, you can create and maintain a digital diary to track the growth and development of your plants. Each user gets a personalized login, ensuring the privacy of their data. What sets us apart is the global community aspect - you can connect with plant lovers from around the world and compare your plant diaries. Discover whose diary showcases the most impressive and flourishing collection of plants. Join us today and be part of a thriving global network of passionate plant enthusiasts!
 
+## Installation
+
+--> Clone or copy this repository after this:
+
+```bash
+  cd Plant_Journal
+  pipenv install 
+```
+
+--> Activate the new virtual environment.
+
+```bash
+  cd Plant_Journal
+  pipenv run pyhton manage.py makemigrations
+  pipenv run pyhton manage.py migrate
+  pipenv run pyhton manage.py runserver
+```
+
+--> If you want to access the database from the Django backend, under /admin:
+
+```bash
+  pipenv run python manage.py createsuperuser
+```
+
+--> Now, you can log in with your admin credentials and inspect the database from the Django backend
 
 ## Environment Variables
 
@@ -15,9 +40,6 @@ To run this project, you will need to add the following environment variables to
 `DB_HOST`
 `DB_PORT`
 `SESSION_COOKIE_AGE`
-
-
-
 
 
 ## Feedback
@@ -59,4 +81,4 @@ In the models, a choice was made to store media files directly on the server. Ho
 
 ## Security
 
-In this web application, we have largely refrained from relying on the Django authentication module. Instead, we have established our own user model and custom forms. Authentication takes place through a 'user_key' generated using the Python module 'secret'. If there is a need to store additional or sensitive data beyond 'Diary' and 'Media' information, it is advisable to consider altering the entire authorization and authentication framework.
+In this web application, we have largely refrained from relying on the Django authentication module. Instead, we have established our own user model and custom forms. Authentication takes place through a 'user_key' generated using the Python module 'secret'. If there is a need to store additional or sensitive data beyond 'Diary' and 'Media' information, it is advisable to consider altering the entire authorization and authentication process.
