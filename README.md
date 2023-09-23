@@ -5,7 +5,7 @@ Introducing our innovative website dedicated to plant enthusiasts worldwide. Wit
 
 ## Installation
 
---> Clone or copy this repository after this:
+--> Clone or copy this repository then:
 
 ```bash
   cd Plant_Journal
