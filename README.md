@@ -56,3 +56,7 @@ In the ranking view, a raw SQL query was employed to directly process data from 
 ![](README_Data/models.png)
 
 In the models, a choice was made to store media files directly on the server. However, as the application grows or accumulates a larger user base, it is advisable to consider transitioning to a cloud service such as AWS, as performance may otherwise be adversely affected.
+
+## Security
+
+In this web application, we have largely refrained from relying on the Django authentication module. Instead, we have established our own user model and custom forms. Authentication takes place through a 'user_key' generated using the Python module 'secret'. If there is a need to store additional or sensitive data beyond 'Diary' and 'Media' information, it is advisable to consider altering the entire authorization and authentication framework.
