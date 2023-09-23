@@ -38,11 +38,11 @@ When this application becomes larger and more intricate, it is advisable to emba
 
 ## Screenshots
 
-![Beschreibung des Bildes](./main_url.png)
+![Beschreibung des Bildes](README_Data/main_url.png)
 ![Beschreibung des Bildes](README_Data/app_url.png)
-![Beschreibung des Bildes](./index_html.png)
-![Beschreibung des Bildes](./login_view.png)
-![Beschreibung des Bildes](./ranking_view.png)
-![Beschreibung des Bildes](./ranking_html.png)
-![Beschreibung des Bildes](./models.png)
+![Beschreibung des Bildes](README_Data/index_html.png)
+![Beschreibung des Bildes](README_Data/login_view.png)
+![Beschreibung des Bildes](README_Data/ranking_view.png)
+![Beschreibung des Bildes](README_Data/ranking_html.png)
+![Beschreibung des Bildes](README_Data/models.png)
 
