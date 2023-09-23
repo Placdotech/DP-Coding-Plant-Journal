@@ -38,10 +38,11 @@ When this application becomes larger and more intricate, it is advisable to emba
 
 ## Screenshots
 
-(./main_url.png)
-(./app_url.png)
-(./index_html.png)
-(./login_view.png)
-(./ranking_view.png)
-(./ranking_html.png)
-(./models.png)
+![Beschreibung des Bildes](./main_url.png)
+![Beschreibung des Bildes](./app_url.png)
+![Beschreibung des Bildes](./index_html.png)
+![Beschreibung des Bildes](./login_view.png)
+![Beschreibung des Bildes](./ranking_view.png)
+![Beschreibung des Bildes](./ranking_html.png)
+![Beschreibung des Bildes](./models.png)
+
