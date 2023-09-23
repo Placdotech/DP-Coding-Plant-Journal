@@ -39,7 +39,7 @@ When this application becomes larger and more intricate, it is advisable to emba
 ## Screenshots
 
 ![Beschreibung des Bildes](./main_url.png)
-![Beschreibung des Bildes](./app_url.png)
+![Beschreibung des Bildes](README_Data/app_url.png)
 ![Beschreibung des Bildes](./index_html.png)
 ![Beschreibung des Bildes](./login_view.png)
 ![Beschreibung des Bildes](./ranking_view.png)
