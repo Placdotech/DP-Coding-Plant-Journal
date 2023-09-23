@@ -42,17 +42,17 @@ When this application becomes larger and more intricate, it is advisable to emba
 ![](README_Data/app_url.png)
 ![](README_Data/index_html.png)
 
-    The showConfirmation function serves to inquire whether the visitor is comfortable with the fact that all entered data will not be deleted. Simultaneously, it is emphasized that this web application is solely for illustrative purposes and is not an officially accessible website.
+The showConfirmation function serves to inquire whether the visitor is comfortable with the fact that all entered data will not be deleted. Simultaneously, it is emphasized that this web application is solely for illustrative purposes and is not an officially accessible website.
 
 ![](README_Data/login_view.png)
 
-    Here is the login view. Data validation takes place in the frontend, which can expedite the validation process instead of initially verifying it in the backend and then processing the response in the frontend. However, it is advisable to consider making changes if this application becomes larger and/or more complex, in order to enhance backend security against potential threats.
+Here is the login view. Data validation takes place in the frontend, which can expedite the validation process instead of initially verifying it in the backend and then processing the response in the frontend. However, it is advisable to consider making changes if this application becomes larger and/or more complex, in order to enhance backend security against potential threats.
 
 ![](README_Data/ranking_view.png)
 
-    In the ranking view, a raw SQL query was employed to directly process data from the query. As the application scales or becomes more intricate, or if sensitive data is to be stored in the database, it is advisable to consider modifying the query.
+In the ranking view, a raw SQL query was employed to directly process data from the query. As the application scales or becomes more intricate, or if sensitive data is to be stored in the database, it is advisable to consider modifying the query.
 
 ![](README_Data/ranking_html.png)
 ![](README_Data/models.png)
 
-    In the models, a choice was made to store media files directly on the server. However, as the application grows or accumulates a larger user base, it is advisable to consider transitioning to a cloud service such as AWS, as performance may otherwise be adversely affected.
+In the models, a choice was made to store media files directly on the server. However, as the application grows or accumulates a larger user base, it is advisable to consider transitioning to a cloud service such as AWS, as performance may otherwise be adversely affected.
