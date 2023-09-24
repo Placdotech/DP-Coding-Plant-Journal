@@ -8,6 +8,7 @@ Introducing our innovative website dedicated to plant enthusiasts worldwide. Wit
 --> Clone or copy this repository then:
 
 ```bash
+  cd DP-Coding-Plant-Journal
   cd Plant_Journal
   pipenv install 
 ```
