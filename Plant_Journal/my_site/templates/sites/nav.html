@@ -27,15 +27,15 @@
                 <a class="nav-link text-light" href="{% url 'contact' %}">Kontakt</a>
               </li>
             </ul>
+            {% if request.COOKIES.user_key != none %}
+            {% if username %}
+            <p class="text-light" id="nav_username" >Hallo {{username}},</p>
+            {% endif %}
+            <a href="{% url 'logout' %}"><button type="button" class="btn btn-warning text-dark text-end" id="logout_btn">Logout</button></a>
+            {% else %}
+            <a href="{% url 'login' %}"><button type="button" class="btn btn-warning text-dark text-end">Login</button></a>
+            {% endif %}
           </div>
-          {% if request.COOKIES.user_key != none %}
-          {% if username %}
-          <p class="text-light" id="nav_username" >Hallo {{username}},</p>
-          {% endif %}
-          <a href="{% url 'logout' %}"><button type="button" class="btn btn-warning text-dark text-end" id="logout_btn">Logout</button></a>
-          {% else %}
-          <a href="{% url 'login' %}"><button type="button" class="btn btn-warning text-dark text-end">Login</button></a>
-          {% endif %}
         </div>
       </nav>
 </div>
