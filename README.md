@@ -3,25 +3,6 @@
 
 Introducing our innovative website dedicated to plant enthusiasts worldwide. With our platform, you can create and maintain a digital diary to track the growth and development of your plants. Each user gets a personalized login, ensuring the privacy of their data. What sets us apart is the global community aspect - you can connect with plant lovers from around the world and compare your plant diaries. Discover whose diary showcases the most impressive and flourishing collection of plants. Join us today and be part of a thriving global network of passionate plant enthusiasts!
 
-## Installation
-
---> Clone or copy this repository then:
-
-```bash
-  cd DP-Coding-Plant-Journal
-  cd Plant_Journal
-  pipenv install 
-```
-
---> Activate the new virtual environment.
-
-```bash
-  cd Plant_Journal
-  pipenv run pyhton manage.py makemigrations
-  pipenv run pyhton manage.py migrate
-  pipenv run pyhton manage.py runserver
-```
-
 --> If you want to access the database from the Django backend, under /admin:
 
 ```bash
