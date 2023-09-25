@@ -52,10 +52,6 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
-
-SESSION_COOKIE_AGE = config('SESSION_COOKIE_AGE')
-
 ROOT_URLCONF = "Plant_Journal.urls"
 
 TEMPLATES = [
