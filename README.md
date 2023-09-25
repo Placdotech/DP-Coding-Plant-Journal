@@ -21,8 +21,6 @@ To run this project, you will need to add the following environment variables to
 `DB_PASSWORD`
 `DB_HOST`
 `DB_PORT`
-`SESSION_COOKIE_AGE`
-
 
 ## Feedback
 
